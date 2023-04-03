@@ -542,6 +542,10 @@
 #       It is not guaranteed that the RTC in the system implements
 #       this event, or even that the system has an RTC at all.
 #
+# Note: Old versions of QEMU (e.g. 6.1) don't provide the qom-path field.
+#       Let's make it optional so that a single version of qapi-rs can
+#       be used with multiple versions of QEMU.
+#
 # Since: 0.13
 #
 # Example:
@@ -552,7 +556,7 @@
 #
 ##
 { 'event': 'RTC_CHANGE',
-  'data': { 'offset': 'int', 'qom-path': 'str' } }
+  'data': { 'offset': 'int', '*qom-path': 'str' } }
 
 ##
 # @VFU_CLIENT_HANGUP:
