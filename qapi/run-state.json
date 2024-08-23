@@ -113,7 +113,7 @@
 # Notes: @singlestep is enabled through the GDB stub
 ##
 { 'struct': 'StatusInfo',
-  'data': {'running': 'bool', 'singlestep': 'bool', 'status': 'RunState'} }
+  'data': {'running': 'bool', '*singlestep': 'bool', 'status': 'RunState'} }
 
 ##
 # @query-status:
